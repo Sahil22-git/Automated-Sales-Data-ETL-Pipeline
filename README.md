@@ -1,26 +1,26 @@
 # Automated Sales Data ETL & Analytics Pipeline
 **Python · MySQL · Power BI**
 
-An end-to-end production-style ETL pipeline that ingests messy multi-batch sales data, validates and transforms it, loads it into a relational database, generates automated SQL analytics reports, and visualises insights through an interactive Power BI dashboard — all triggered by a single command.
+An end to end production style ETL pipeline that ingests messy multi-batch sales data, validates and transforms it, loads it into a relational database, generates automated SQL analytics reports and visualises insights through an interactive Power BI dashboard all triggered by a single command.
 
 ---
 
 ## What This Project Demonstrates
 
 - Real-world data validation: identified and removed **3,227 records (37% of raw dataset)** with null product identifiers
-- End-to-end pipeline automation from raw CSV ingestion to SQL reporting
+- End to end pipeline automation from raw CSV ingestion to SQL reporting
 - Advanced SQL: window functions, CTEs, ranking queries, aggregations
 - Interactive Power BI dashboard built directly on pipeline output
-- Modular, production-ready Python codebase
+- Modular, production ready Python codebase
 
 ---
 
 ## Architecture
 
 ```
-Raw CSV Files (Multi-Batch, Messy Data)
+Raw CSV Files (Multi Batch, Messy Data)
         ↓
-Ingestion Layer — Python (Pandas)
+Ingestion Layer - Python (Pandas)
         ↓
 Data Cleaning & Validation
   - Removed 3,227 null product records
@@ -34,7 +34,7 @@ MySQL Database (sales_data_clean)
         ↓
 Automated SQL Analytics Reports (10+ report types)
         ↓
-Power BI Dashboard (2-page interactive, $1.97M revenue tracked)
+Power BI Dashboard (2 page interactive, $1.97M revenue tracked)
 ```
 
 ---
@@ -60,23 +60,23 @@ Power BI Dashboard (2-page interactive, $1.97M revenue tracked)
 ### 2. Data Cleaning & Validation
 - Removed **3,227 records** with null or placeholder product identifiers
 - Deduplicated records → **8,559 clean records retained**
-- Handled missing values, negative sales, and invalid numeric entries
+- Handled missing values, negative sales and invalid numeric entries
 - Standardised date formats across all batches
 - Logged all cleaning activity for auditability
 
 ### 3. Business Transformation
 Engineered analytical features:
-- `Order Year` — for year-over-year trend analysis
+- `Order Year` — for year over year trend analysis
 - `Order Month` — for seasonality and monthly revenue tracking
 - `Shipping Days` — delivery performance metric (avg: 113 days flagged as operational risk)
 
 ### 4. Database Loading
 - Connected to MySQL via SQLAlchemy
 - Loaded clean dataset into `sales_data_clean` table
-- Auto-replaces stale data on each pipeline run
+- Auto replaces stale data on each pipeline run
 
 ### 5. Automated SQL Reporting (10+ Reports)
-All reports auto-exported as CSV files:
+All reports auto exported as CSV files:
 
 | Report | SQL Technique |
 |---|---|
@@ -115,8 +115,8 @@ Built directly on `sales_data_clean` MySQL output:
 ## Key Business Insights
 
 - **West region** is the highest revenue contributor
-- **Technology** is the top-performing category at $503K (40.7% of total revenue)
-- **95% of orders** exceed 7-day shipping threshold — significant operational risk
+- **Technology** is the top performing category at $503K (40.7% of total revenue)
+- **95% of orders** exceed 7 day shipping threshold - significant operational risk
 - **Average shipping time of 113 days** indicates fulfilment bottleneck worth investigating
 - **Consumer segment** drives 47% of total revenue
 - **New York City** is the top city by revenue
